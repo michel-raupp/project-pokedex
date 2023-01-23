@@ -134,7 +134,7 @@ export const Cartinha = styled(CardMedia)`
 `
 
 export const Background = styled(Container)`
-    padding: 40px 0;
+    padding: 90px 0 40px 0;
     width: 100%;
     min-height: 1080px;
     height: 100%;
@@ -150,6 +150,14 @@ export const Background = styled(Container)`
         justify-content: center;
         align-items: center;
         margin: 0;
+    }
+
+    @media (max-width: 940px){
+        padding: 120px 0 40px 0;   
+    }
+
+    @media (max-width: 550px){
+        padding: 100px 0 40px 0;   
     }
     
 `
