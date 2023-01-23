@@ -38,7 +38,7 @@ export const FontSizes = {
     hippo: '82px',
     horse: '70px',
     bigWolf: '50px',
-    wolf: '32px',
+    wolf: '20px',
     cat: '14px',
     rat: '10px',
 }
@@ -52,4 +52,5 @@ export const Container = styled.div`
 
 export const Trademark = styled.img`
 width: 120px;
+margin-right: 50px;
 `

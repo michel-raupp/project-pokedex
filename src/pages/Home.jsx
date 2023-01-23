@@ -5,7 +5,9 @@ import PokemonCard from "../components/PokemonCard";
 import axios from "axios";
 import { Skeletons } from "../components/Skeletons";
 import { Container } from "../styles/Styles";
-import { Background } from "./styles";
+import { Background, Header } from "./styles";
+import evo from "../assets/poke-evo.gif"
+
 
 export const Home = () => {
 
@@ -44,25 +46,43 @@ export const Home = () => {
 
     return (
         <div>
-            
+
             <Navbar pokemonFilter={pokemonFilter} />
+            {/* <img src={bg}/> */}
+
             <Background>
+                <Header>
+                    <img src={evo} />
+                    <Container style={{flexDirection: "column"}}>
+                        <h1>
+                            Hello Trainer, welcome to the world of Pokémon!
+                        </h1>
+                        <p>
+                            This is a Pokédex project which you can search all Kanto's Pokémons. This project was built on ReactJS and styled componets, using the PokeAPI.
+                        </p>
+
+                        <a href="https://github.com/michel-raupp/project-pokedex" target="_blank"><p>Open GitHub</p></a>
+
+                    </Container>
+                </Header>
                 <Container>
-                    <Grid container spacing={3}>
+                    <Grid className="Spacing">
                         {pokemons.length === 0 ? (
                             <Skeletons />
                         ) : (
                             pokemons.map((pokemon, key) => (
-                                <Grid item xs={12} sm={6} md={4} lg={2} key={key}>
+                                <Grid key={key}>
                                     <PokemonCard name={pokemon.data.name}
                                         // image={pokemon.data.sprites.front_default}
-                                        image={pokemon.data.sprites.versions["generation-v"]["black-white"].animated.front_default} 
+                                        image={pokemon.data.sprites.versions["generation-v"]["black-white"].animated.front_default}
                                         types={pokemon.data.types} />
                                 </Grid>
                             ))
                         )}
                     </Grid>
+
                 </Container>
+
             </Background>
         </div>
     );

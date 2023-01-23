@@ -13,14 +13,24 @@ background: ${Colors.cream};
 width: 245px;
 height: 315px;
 
+@media (max-width: 842px){
+    width: 500px;
+}
+
+@media (max-width: 550px){
+    width: 245px;
+}
     img{
+        z-index: 2;
         margin: 0 0 45px 0;
         transform: scale(2);
         filter: drop-shadow(2px 2px 0px ${Colors.bronze});
     }
+
 `
 
 export const Texts = styled(Container)`
+    z-index: 1;
     flex-direction: column;
     border-radius: 3px;
     color: ${Colors.white};
@@ -34,11 +44,25 @@ export const Texts = styled(Container)`
     justify-content: space-around;
     padding: 10px 0;
     margin: 20px 0 2px 0;
+
+    @media (max-width: 842px){
+        border-radius: 5px;
+        width: 487px;
+        margin: 20px 0 2px 0;
+    }
+
+    @media (max-width: 550px){
+        border-radius: 5px;
+        width: 230px;
+        margin: 20px 0 2px 0;
+    }
+
     h2{
         filter: drop-shadow(2px 2px 0 ${Colors.black});
         text-transform: uppercase;
         letter-spacing: 2px;
     }
+    
 `
 
 // export const PokeID = styled(Container)`
