@@ -5,9 +5,8 @@ import PokemonCard from "../components/PokemonCard";
 import axios from "axios";
 import { Skeletons } from "../components/Skeletons";
 import { Container } from "../styles/Styles";
-import { Background, Header } from "./styles";
+import { Background, Header, NotFound } from "./styles";
 import evo from "../assets/poke-evo.gif"
-
 
 export const Home = () => {
 
@@ -23,8 +22,7 @@ export const Home = () => {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
         }
 
-        var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).
-            then((res) => setPokemons(res));
+        var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res));
     };
 
 
@@ -40,40 +38,45 @@ export const Home = () => {
                 filteredPokemons.push(pokemons[i]);
             }
         }
-
         setPokemons(filteredPokemons);
     };
 
     return (
         <div>
-
             <Navbar pokemonFilter={pokemonFilter} />
-            {/* <img src={bg}/> */}
-
             <Background>
                 <Header>
-                    <img src={evo} />
-                    <Container style={{flexDirection: "column"}}>
+                    <img src={evo} alt="All six Red's Pokémons from pokémon Fire Red" />
+                    <Container style={{ flexDirection: "column" }}>
                         <h1>
                             Hello Trainer, welcome to the world of Pokémon!
                         </h1>
                         <p>
-                            This is a Pokédex project which you can search all Kanto's Pokémons. This project was built on ReactJS and styled componets, using the PokeAPI.
+                            This is a Pokédex project which you can search all 151 Kanto's Pokémons. This project was built on ReactJS, styled componets and MUI, using the PokeAPI.
                         </p>
-
-                        <a href="https://github.com/michel-raupp/project-pokedex" target="_blank"><p>Open GitHub</p></a>
-
+                        <a href="https://github.com/michel-raupp/project-pokedex" target="_blank" rel="noreferrer" >
+                            <p>Open GitHub</p>
+                        </a>
                     </Container>
                 </Header>
                 <Container>
                     <Grid className="Spacing">
                         {pokemons.length === 0 ? (
-                            <Skeletons />
+                            <>
+                                <NotFound>
+                                    <Container style={{ flexDirection: "column" }}>
+                                        <h1>Ops, you got a problem! </h1>
+                                        <p>Neither you typed the name wrong or you searched for a pokémon above the first 151 pokémons (First Gen).</p>
+                                        <p>Clear the search input to see all the pokes and try again!</p>
+                                        <p> Another reason for this problem could be your internet connection, due the high demand of the PokeAPI on loading all the images</p>
+                                    </Container>
+                                </NotFound>
+                                <Skeletons />
+                            </>
                         ) : (
                             pokemons.map((pokemon, key) => (
                                 <Grid key={key}>
                                     <PokemonCard name={pokemon.data.name}
-                                        // image={pokemon.data.sprites.front_default}
                                         image={pokemon.data.sprites.versions["generation-v"]["black-white"].animated.front_default}
                                         types={pokemon.data.types} />
                                 </Grid>

@@ -1,8 +1,6 @@
 import { Colors, Container, FontSizes } from "../../styles/Styles";
 import styled from "styled-components";
 
-
-
 export const Card = styled(Container)`
 flex-direction: column;
 justify-content: flex-end;
@@ -16,10 +14,13 @@ height: 315px;
 @media (max-width: 842px){
     width: 500px;
 }
-
 @media (max-width: 550px){
-    width: 245px;
+    width: 300px;
 }
+@media (max-width: 350px){
+        width: 250px;
+}
+
     img{
         z-index: 2;
         margin: 0 0 45px 0;
@@ -50,36 +51,21 @@ export const Texts = styled(Container)`
         width: 487px;
         margin: 20px 0 2px 0;
     }
-
     @media (max-width: 550px){
-        border-radius: 5px;
-        width: 230px;
-        margin: 20px 0 2px 0;
+        width: 286px;
+    }
+    @media (max-width: 350px){
+        width: 236px;
     }
 
     h2{
         filter: drop-shadow(2px 2px 0 ${Colors.black});
         text-transform: uppercase;
         letter-spacing: 2px;
-    }
-    
+    } 
 `
 
-// export const PokeID = styled(Container)`
-//     background: blue;
-//     width: 30px;
-//     height: 30px;
-//     position: fixed;
-//     border-radius: 3px;
-//     margin: -270px 0 0 -200px;
-
-// `
-
 export const PokeType = styled(Container)`
-    .tipo-water { color: blue };
-    .tipo-grass { color: green };
-
-
     font-size: ${FontSizes.rat};
     border-radius: 3px;
     border: 1px solid ${Colors.white};

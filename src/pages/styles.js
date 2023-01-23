@@ -1,14 +1,6 @@
-import { Card, CardMedia, Container } from "@mui/material";
+import { CardMedia, Container } from "@mui/material";
 import styled from "styled-components";
 import { Colors, FontSizes } from "../styles/Styles";
-
-// export const Conteudo = styled(Container)`
-//     max-width:900px;
-//     @media (max-width: 900px){
-//         max-width:90%; 
-//     }
-
-// `
 
 export const Header = styled.div`
     display: flex;
@@ -24,11 +16,10 @@ export const Header = styled.div`
 
     @media (max-width: 940px){
         flex-direction: column;
+        margin: 0 0 30px 0;
     }
-
     @media (max-width: 550px){
         width: 100%;
-        margin: 50px 0;
     }
 
     h1{
@@ -38,14 +29,14 @@ export const Header = styled.div`
         color: #4F6753;
         padding: 0 50px;
 
-        @media (max-width: 1125px){
+        @media (max-width: 1150px){
             line-height: 30px;
-            margin-top: 10px;
+            margin-top: 0px;
         }
 
         @media (max-width: 550px){
             font-size: ${FontSizes.cat};
-            line-height: 20px;
+            line-height: 17px;
             padding: 0 10px;
         }
     }
@@ -58,13 +49,14 @@ export const Header = styled.div`
         line-height: 20px;
         text-align: left;
 
-        @media (max-width: 1125px){
-            padding: 0 20px 30px 30px;
+        @media (max-width: 1150px){
+            padding: 0 20px 0px 30px;
         }
 
         @media (max-width: 842px){
             text-align: center;
-            padding: 0 50px 50px 50px;
+            line-height: 17px;
+            padding: 0 50px 0px 50px;
         }
 
         @media (max-width: 550px){
@@ -76,7 +68,6 @@ export const Header = styled.div`
     a{
         text-decoration: none;
         p{
-            
             border: 4px solid ${Colors.white};
             outline: 2px solid #264F69;
             border-radius: 10px;
@@ -85,8 +76,13 @@ export const Header = styled.div`
             background-color: #264F69;
             color: #fff;
             @media (max-width: 940px){
-                margin: 0 0 30px 0;
+                margin: 20px 0 30px 0;
             }
+            @media (max-width: 550px){
+            font-size: 8px;
+            padding: 5px 10px;
+            margin: 0 0 20px 0;
+        }
         }
     }
 
@@ -105,26 +101,22 @@ export const Header = styled.div`
             width: 400px;
             padding: 50px 0;
         }
-
         @media (max-width: 1020px){
             width: 350px;
             padding: 100px 0;
         }
-
         @media (max-width: 940px){
             box-shadow: none;
             border: none;
             background: none;
             padding: 10px 0 0 0;
+            filter: drop-shadow(2px 2px 0px ${Colors.bronze});
         }
-
         @media (max-width: 550px){
             width: 250px;
             padding: 10px 0 0 0;
-        }
-        
+        }  
     }
-
 `
 
 export const Cartinha = styled(CardMedia)`
@@ -142,7 +134,6 @@ export const Cartinha = styled(CardMedia)`
 `
 
 export const Background = styled(Container)`
-    
     padding: 40px 0;
     width: 100%;
     min-height: 1080px;
@@ -161,5 +152,37 @@ export const Background = styled(Container)`
         margin: 0;
     }
     
+`
+
+export const NotFound = styled(Header)`
+width: 800px;
+height: auto;
+min-height: 300px;
+margin: 0;
+    @media (max-width: 940px){
+        flex-direction: column;
+        padding: 30px;
+        width: 100%; 
+    }
+
+    @media (max-width: 550px){
+        width: 100%;
+    }
+
+    h1{
+        color: red;
+        padding: 0;
+    }
+
+    p{
+        @media (max-width: 1150px){
+            padding: 0 20px 0 20px;
+        }
+
+        @media (max-width: 842px){
+            padding: 0;
+        }
+    }
+
 `
 

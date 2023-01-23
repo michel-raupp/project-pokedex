@@ -1,6 +1,6 @@
-import { fontFamily } from '@mui/system';
+
 import { createGlobalStyle } from 'styled-components';
-import { Gradient, Colors, FontSizes } from './Styles';
+import { Colors, FontSizes } from './Styles';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-thumb{
     background: ${Colors.cream};
     border: solid 2px ${Colors.blue};
-    border-radius: 25px;
+    border-radius: 5px;
     transition: 0.5s ease-in-out;
   }
   ::-webkit-scrollbar-thumb:hover{
